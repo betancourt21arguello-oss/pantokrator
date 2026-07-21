@@ -1,0 +1,99 @@
+#:schema node_modules/wrangler/config-schema.json
+# =============================================================================
+# CAMINO · Cloudflare Workers (Hono.js) — configuración de despliegue
+# -----------------------------------------------------------------------------
+# Este archivo describe el Worker de backend (API + producer de Queues) y el
+# Worker consumidor de la cola para la ESCRITURA DIFERIDA hacia Supabase.
+#
+# NOTA: El sandbox de desarrollo corre Next.js. Este wrangler.toml es el
+# artefacto de infraestructura para el despliegue de producción en Cloudflare.
+# Los secretos NO van aquí: se inyectan con `wrangler secret put <NAME>`.
+# =============================================================================
+
+name = "camino-api"
+main = "src/worker/index.ts"
+compatibility_date = "2026-01-01"
+
+# nodejs_compat -> máxima compatibilidad con drivers de BD (postgres-js / pg)
+# y librerías Node usadas por Drizzle / @supabase/supabase-js.
+compatibility_flags = ["nodejs_compat"]
+
+workers_dev = true
+minify = true
+
+# -----------------------------------------------------------------------------
+# Variables públicas (NO secretas). Los secretos se cargan con:
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+#   wrangler secret put SUPABASE_DB_URL
+#   wrangler secret put GEMINI_API_KEY
+# -----------------------------------------------------------------------------
+[vars]
+SUPABASE_URL = "https://YOUR-PROJECT-ref.supabase.co"
+SUPABASE_ANON_KEY = "REPLACE_WITH_ANON_KEY"      # clave pública anon (segura en cliente)
+ENVIRONMENT = "production"
+GEMINI_MODEL = "gemini-2.0-flash"
+
+# -----------------------------------------------------------------------------
+# Cloudflare Queues — PRODUCER
+# El Worker de Hono publica eventos/métricas en esta cola en vez de escribir
+# directamente en Supabase, protegiendo el pool de conexiones del tier gratuito.
+# -----------------------------------------------------------------------------
+[[queues.producers]]
+binding = "CAMINO_QUEUE"       # env.CAMINO_QUEUE.send(...) desde Hono
+queue = "camino-events"
+
+# -----------------------------------------------------------------------------
+# Cloudflare Queues — CONSUMER
+# Worker consumidor: recibe lotes y hace BATCH INSERT en Supabase (Drizzle).
+# Ajustado para el tier gratuito: lotes grandes + baja frecuencia = menos
+# conexiones a Postgres.
+# -----------------------------------------------------------------------------
+[[queues.consumers]]
+queue = "camino-events"
+max_batch_size = 100           # hasta 100 eventos por batch insert
+max_batch_timeout = 30         # o cada 30s, lo que ocurra antes
+max_retries = 3
+dead_letter_queue = "camino-events-dlq"
+
+# -----------------------------------------------------------------------------
+# Cron Triggers — generación diaria de contenido IA (Gemini) cacheado.
+# 05:00 UTC: genera reflexión/frase/oración temática del día y la cachea.
+# -----------------------------------------------------------------------------
+[triggers]
+crons = ["0 5 * * *"]
+
+# -----------------------------------------------------------------------------
+# Cache API: no requiere binding explícito (se accede vía `caches.default` o
+# `caches.open("camino-ai")` dentro del Worker). Se documenta aquí para
+# claridad operativa. El cron guarda las respuestas de Gemini en este cache.
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# Placement inteligente: acerca el Worker a la región de Supabase para reducir
+# latencia en las escrituras del consumidor.
+# -----------------------------------------------------------------------------
+[placement]
+mode = "smart"
+
+# =============================================================================
+# ENTORNO DE STAGING
+# =============================================================================
+[env.staging]
+name = "camino-api-staging"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+SUPABASE_URL = "https://YOUR-STAGING-ref.supabase.co"
+SUPABASE_ANON_KEY = "REPLACE_WITH_STAGING_ANON_KEY"
+GEMINI_MODEL = "gemini-2.0-flash"
+
+[[env.staging.queues.producers]]
+binding = "CAMINO_QUEUE"
+queue = "camino-events-staging"
+
+[[env.staging.queues.consumers]]
+queue = "camino-events-staging"
+max_batch_size = 100
+max_batch_timeout = 30
+max_retries = 3
+dead_letter_queue = "camino-events-staging-dlq"

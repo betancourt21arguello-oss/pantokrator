@@ -1,0 +1,246 @@
+{
+  "id": "rosario-misterios-dolorosos",
+  "slug": "misterios-dolorosos",
+  "title": "Misterios Dolorosos",
+  "description": "Rosario Perpetuo — Misterios Dolorosos del Santo Rosario",
+  "accentColor": "#C6A15B",
+  "totalSteps": 60,
+  "steps": [
+    {
+      "id": "intro-1",
+      "order": 1,
+      "kind": "intro",
+      "title": "Por la señal de la Santa Cruz",
+      "subtitle": "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
+      "durationMs": 4000,
+      "requiresResponse": false
+    },
+    {
+      "id": "intro-2",
+      "order": 2,
+      "kind": "intro",
+      "title": "Credo",
+      "subtitle": "Credo de los Apóstoles",
+      "prayerText": "Creo en Dios, Padre todopoderoso, Creador del cielo y de la tierra...",
+      "durationMs": 12000,
+      "requiresResponse": true,
+      "repeat": 1
+    },
+    {
+      "id": "intro-3",
+      "order": 3,
+      "kind": "intro",
+      "title": "Padre Nuestro",
+      "prayerText": "Padre nuestro, que estás en el cielo, santificado sea tu Nombre...",
+      "durationMs": 8000,
+      "requiresResponse": true,
+      "repeat": 1
+    },
+    {
+      "id": "intro-4",
+      "order": 4,
+      "kind": "intro",
+      "title": "Ave María",
+      "subtitle": "3 Avemarías por las virtudes teologales",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 18000,
+      "requiresResponse": true,
+      "repeat": 3
+    },
+    {
+      "id": "intro-5",
+      "order": 5,
+      "kind": "intro",
+      "title": "Gloria al Padre",
+      "prayerText": "Gloria al Padre, y al Hijo, y al Espíritu Santo...",
+      "durationMs": 5000,
+      "requiresResponse": true,
+      "repeat": 1
+    },
+    {
+      "id": "mystery-1",
+      "order": 6,
+      "kind": "mystery",
+      "title": "1.º Misterio Doloroso",
+      "subtitle": "La Oración en el Huerto de los Olivos",
+      "bibleQuote": "Mi alma está triste hasta el morir; quedaos aquí y velad conmigo. (Mt 26, 38)",
+      "mysteryImage": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio1-doloroso.jpg",
+      "durationMs": 30000,
+      "requiresResponse": false
+    },
+    {
+      "id": "decade-1",
+      "order": 7,
+      "kind": "prayer",
+      "title": "Primera Década",
+      "subtitle": "La Oración en el Huerto",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 60000,
+      "requiresResponse": true,
+      "repeat": 10,
+      "readerRole": true
+    },
+    {
+      "id": "interlude-1",
+      "order": 8,
+      "kind": "interlude",
+      "title": "Gloria y Jaculatoria",
+      "subtitle": "Gloria al Padre... + Dios mío, Jesús mío...",
+      "prayerText": "Gloria al Padre... Oh Jesús mío, perdónanos nuestros pecados...",
+      "durationMs": 20000,
+      "requiresResponse": false
+    },
+    {
+      "id": "mystery-2",
+      "order": 9,
+      "kind": "mystery",
+      "title": "2.º Misterio Doloroso",
+      "subtitle": "La Flagelación del Señor",
+      "bibleQuote": "Pilato entonces tomó a Jesús y mandó azotarle. (Jn 19, 1)",
+      "mysteryImage": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio2-doloroso.jpg",
+      "durationMs": 30000,
+      "requiresResponse": false
+    },
+    {
+      "id": "decade-2",
+      "order": 10,
+      "kind": "prayer",
+      "title": "Segunda Década",
+      "subtitle": "La Flagelación",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 60000,
+      "requiresResponse": true,
+      "repeat": 10,
+      "readerRole": true
+    },
+    {
+      "id": "interlude-2",
+      "order": 11,
+      "kind": "interlude",
+      "title": "Gloria y Jaculatoria",
+      "subtitle": "Gloria al Padre... + Dios mío, Jesús mío...",
+      "prayerText": "Gloria al Padre... Oh Jesús mío, perdónanos nuestros pecados...",
+      "durationMs": 20000,
+      "requiresResponse": false
+    },
+    {
+      "id": "mystery-3",
+      "order": 12,
+      "kind": "mystery",
+      "title": "3.º Misterio Doloroso",
+      "subtitle": "La Coronación de Espinas",
+      "bibleQuote": "Los soldados entretejieron una corona de espinas y se la pusieron en la cabeza. (Jn 19, 2)",
+      "mysteryImage": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio3-doloroso.jpg",
+      "durationMs": 30000,
+      "requiresResponse": false
+    },
+    {
+      "id": "decade-3",
+      "order": 13,
+      "kind": "prayer",
+      "title": "Tercera Década",
+      "subtitle": "La Coronación de Espinas",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 60000,
+      "requiresResponse": true,
+      "repeat": 10,
+      "readerRole": true
+    },
+    {
+      "id": "interlude-3",
+      "order": 14,
+      "kind": "interlude",
+      "title": "Gloria y Jaculatoria",
+      "subtitle": "Gloria al Padre... + Dios mío, Jesús mío...",
+      "prayerText": "Gloria al Padre... Oh Jesús mío, perdónanos nuestros pecados...",
+      "durationMs": 20000,
+      "requiresResponse": false
+    },
+    {
+      "id": "mystery-4",
+      "order": 15,
+      "kind": "mystery",
+      "title": "4.º Misterio Doloroso",
+      "subtitle": "La Cruz a cuestas",
+      "bibleQuote": "Jesús salió cargado con la cruz. (Jn 19, 17)",
+      "mysteryImage": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio4-doloroso.jpg",
+      "durationMs": 30000,
+      "requiresResponse": false
+    },
+    {
+      "id": "decade-4",
+      "order": 16,
+      "kind": "prayer",
+      "title": "Cuarta Década",
+      "subtitle": "La Cruz a cuestas",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 60000,
+      "requiresResponse": true,
+      "repeat": 10,
+      "readerRole": true
+    },
+    {
+      "id": "interlude-4",
+      "order": 17,
+      "kind": "interlude",
+      "title": "Gloria y Jaculatoria",
+      "subtitle": "Gloria al Padre... + Dios mío, Jesús mío...",
+      "prayerText": "Gloria al Padre... Oh Jesús mío, perdónanos nuestros pecados...",
+      "durationMs": 20000,
+      "requiresResponse": false
+    },
+    {
+      "id": "mystery-5",
+      "order": 18,
+      "kind": "mystery",
+      "title": "5.º Misterio Doloroso",
+      "subtitle": "La Crucifixión y Muerte del Señor",
+      "bibleQuote": "Jesús clamó con gran voz: Padre, en tus manos encomiendo mi espíritu. (Lc 23, 46)",
+      "mysteryImage": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio5-doloroso.jpg",
+      "durationMs": 30000,
+      "requiresResponse": false
+    },
+    {
+      "id": "decade-5",
+      "order": 19,
+      "kind": "prayer",
+      "title": "Quinta Década",
+      "subtitle": "La Crucifixión",
+      "prayerText": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+      "durationMs": 60000,
+      "requiresResponse": true,
+      "repeat": 10,
+      "readerRole": true
+    },
+    {
+      "id": "interlude-5",
+      "order": 20,
+      "kind": "interlude",
+      "title": "Gloria y Jaculatoria",
+      "subtitle": "Gloria al Padre... + Dios mío, Jesús mío...",
+      "prayerText": "Gloria al Padre... Oh Jesús mío, perdónanos nuestros pecados...",
+      "durationMs": 20000,
+      "requiresResponse": false
+    },
+    {
+      "id": "closing-1",
+      "order": 21,
+      "kind": "closing",
+      "title": "Salve",
+      "prayerText": "Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra...",
+      "durationMs": 15000,
+      "requiresResponse": true,
+      "repeat": 1
+    },
+    {
+      "id": "closing-2",
+      "order": 22,
+      "kind": "closing",
+      "title": "Oración Final",
+      "subtitle": "Oh Dios, cuyo Unigénito Hijo...",
+      "prayerText": "Oh Dios, cuyo Unigénito Hijo, por su vida, muerte y resurrección, nos mereció el premio de la vida eterna...",
+      "durationMs": 10000,
+      "requiresResponse": false
+    }
+  ]
+}

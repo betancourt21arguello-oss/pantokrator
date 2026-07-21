@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CAMINO · Sistema de diseño (Apple HIG · minimalismo sagrado)
+   - Tipografía SF Pro (fallback a la pila del sistema Apple)
+   - Radii ≥ 16px, touch targets ≥ 44px
+   ========================================================================== */
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-camino-bg: #f7f5f0;
+  --color-camino-ink: #1c1c1e;
+  --color-camino-muted: #6b6b70;
+  --color-camino-sage: #6f7f5f;
+  --color-camino-gold: #c9a24b;
+  --color-camino-night: #0f1526;
+
+  --radius-camino: 16px;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Touch targets accesibles por defecto (HIG ≥ 44px) */
+button,
+a[role="button"],
+.touch-target {
+  min-height: 44px;
+}
+
+/* Utilidad de scroll suave para el shell móvil */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes camino-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+.animate-breathe {
+  animation: camino-breathe 6s ease-in-out infinite;
+}

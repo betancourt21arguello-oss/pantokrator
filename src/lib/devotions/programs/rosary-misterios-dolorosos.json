@@ -1,0 +1,219 @@
+{
+  "id": "rosario-misterios-dolorosos",
+  "slug": "misterios-dolorosos",
+  "title": "Misterios Dolorosos",
+  "description": "Rosario Perpetuo — Misterios Dolorosos del Santo Rosario",
+  "accentColor": "#C6A15B",
+  "root": {
+    "id": "root",
+    "type": "sequence",
+    "title": "Rosario Completo",
+    "children": [
+      {
+        "id": "module-intro",
+        "type": "sequence",
+        "title": "Introducción",
+        "children": [
+          {
+            "id": "step-signo-cruz",
+            "type": "prayer",
+            "title": "Por la señal de la Santa Cruz",
+            "subtitle": "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
+            "text": "En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
+            "durationMs": 4000,
+            "requiresResponse": false,
+            "roles": [{ "type": "everyone" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-acto-contricion",
+            "type": "prayer",
+            "title": "Acto de Contrición",
+            "text": "Señor mío Jesucristo, porque me amas, me pesa de todo corazón haber ofendido. Propongo firmemente no pecar más y espero vencer con tu gracia. Amén.",
+            "durationMs": 8000,
+            "requiresResponse": true,
+            "roles": [{ "type": "leader" }, { "type": "assembly" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-credo",
+            "type": "prayer",
+            "title": "Credo",
+            "subtitle": "Credo de los Apóstoles",
+            "text": "Creo en Dios, Padre todopoderoso, Creador del cielo y de la tierra...",
+            "durationMs": 12000,
+            "requiresResponse": true,
+            "roles": [{ "type": "leader" }, { "type": "assembly" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-padrenuestro",
+            "type": "prayer",
+            "title": "Padre Nuestro",
+            "text": "Padre nuestro, que estás en el cielo, santificado sea tu Nombre...",
+            "durationMs": 8000,
+            "requiresResponse": true,
+            "roles": [{ "type": "leader" }, { "type": "assembly" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-ave-maria-x3",
+            "type": "repeated_prayer",
+            "title": "Ave María",
+            "subtitle": "3 Avemarías por las virtudes teologales",
+            "text": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+            "repeat": 3,
+            "durationMs": 6000,
+            "requiresResponse": true,
+            "roles": [{ "type": "leader" }, { "type": "assembly" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-gloria",
+            "type": "prayer",
+            "title": "Gloria al Padre",
+            "text": "Gloria al Padre, y al Hijo, y al Espíritu Santo...",
+            "durationMs": 5000,
+            "requiresResponse": true,
+            "roles": [{ "type": "everyone" }],
+            "actions": [{ "type": "advance" }]
+          }
+        ]
+      },
+      {
+        "id": "module-ciclo-misterios",
+        "type": "repeat",
+        "title": "Ciclo de Misterios",
+        "repeat": 5,
+        "children": [
+          {
+            "id": "module-misterio",
+            "type": "sequence",
+            "title": "Misterio",
+            "children": [
+              {
+                "id": "step-misterio",
+                "type": "mystery",
+                "title": "Misterio Doloroso",
+                "subtitle": "La Oración en el Huerto",
+                "text": "Mi alma está triste hasta el morir; quedaos aquí y velad conmigo. (Mt 26, 38)",
+                "image": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/misterio1-doloroso.jpg",
+                "durationMs": 30000,
+                "requiresResponse": false,
+                "roles": [{ "type": "silent" }],
+                "actions": [
+                  { "type": "show_image" },
+                  { "type": "play_audio", "payload": { "url": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/interludio/meditation-1.mp3" } },
+                  { "type": "advance" }
+                ]
+              },
+              {
+                "id": "step-padrenuestro-misterio",
+                "type": "prayer",
+                "title": "Padre Nuestro",
+                "text": "Padre nuestro, que estás en el cielo, santificado sea tu Nombre...",
+                "durationMs": 8000,
+                "requiresResponse": true,
+                "roles": [{ "type": "leader" }, { "type": "assembly" }],
+                "actions": [{ "type": "advance" }]
+              },
+              {
+                "id": "step-ave-maria-x10",
+                "type": "repeated_prayer",
+                "title": "Ave María",
+                "subtitle": "10 Avemarías",
+                "text": "Dios te salve, María, llena eres de gracia, el Señor es contigo...",
+                "repeat": 10,
+                "durationMs": 6000,
+                "requiresResponse": true,
+                "roles": [{ "type": "leader" }, { "type": "assembly" }],
+                "actions": [{ "type": "advance" }]
+              },
+              {
+                "id": "step-gloria-misterio",
+                "type": "prayer",
+                "title": "Gloria",
+                "text": "Gloria al Padre, y al Hijo, y al Espíritu Santo...",
+                "durationMs": 5000,
+                "requiresResponse": true,
+                "roles": [{ "type": "everyone" }],
+                "actions": [{ "type": "advance" }]
+              },
+              {
+                "id": "step-maria-madre-gracia",
+                "type": "prayer",
+                "title": "María Madre de Gracia",
+                "text": "María, madre de gracia y misericordia...",
+                "durationMs": 5000,
+                "requiresResponse": true,
+                "roles": [{ "type": "everyone" }],
+                "actions": [{ "type": "advance" }]
+              },
+              {
+                "id": "step-oh-jesus",
+                "type": "prayer",
+                "title": "Oh Jesús mío",
+                "text": "Oh Jesús mío, perdónanos nuestros pecados, líbranos del fuego del infierno...",
+                "durationMs": 5000,
+                "requiresResponse": true,
+                "roles": [{ "type": "everyone" }],
+                "actions": [{ "type": "advance" }]
+              },
+              {
+                "id": "step-reflexion",
+                "type": "reflection",
+                "title": "Reflexión",
+                "text": "Medita en el misterio...",
+                "durationMs": 120000,
+                "requiresResponse": false,
+                "roles": [{ "type": "silent" }],
+                "actions": [
+                  { "type": "open_chat" },
+                  { "type": "play_audio", "payload": { "url": "https://56566e9b25f5574dc20103ba3ac9d85c.r2.cloudflarestorage.com/rosario/interludio/meditation-1.mp3" } },
+                  { "type": "advance" }
+                ],
+                "transitions": [
+                  { "trigger": "on_complete", "target": "step-gloria-misterio", "action": { "type": "close_chat" } }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "module-clausura",
+        "type": "sequence",
+        "title": "Clausura",
+        "children": [
+          {
+            "id": "step-salve",
+            "type": "final_prayer",
+            "title": "Salve",
+            "text": "Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra...",
+            "durationMs": 15000,
+            "requiresResponse": true,
+            "roles": [{ "type": "leader" }, { "type": "assembly" }],
+            "actions": [{ "type": "advance" }]
+          },
+          {
+            "id": "step-oracion-final",
+            "type": "final_prayer",
+            "title": "Oración Final",
+            "subtitle": "Oh Dios, cuyo Unigénito Hijo...",
+            "text": "Oh Dios, cuyo Unigénito Hijo, por su vida, muerte y resurrección, nos mereció el premio de la vida eterna...",
+            "durationMs": 10000,
+            "requiresResponse": false,
+            "roles": [{ "type": "everyone" }],
+            "actions": [{ "type": "advance" }]
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "totalMysteries": 5,
+    "mysteryType": "dolorosos",
+    "languages": ["es"],
+    "estimatedDurationMs": 5400000
+  }
+}
