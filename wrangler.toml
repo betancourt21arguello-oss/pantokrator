@@ -28,8 +28,8 @@ minify = true
 #   wrangler secret put GEMINI_API_KEY
 # -----------------------------------------------------------------------------
 [vars]
-SUPABASE_URL = "https://YOUR-PROJECT-ref.supabase.co"
-SUPABASE_ANON_KEY = "REPLACE_WITH_ANON_KEY"      # clave pública anon (segura en cliente)
+SUPABASE_URL = "https://qmuootexudvmczvpwouu.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtdW9vdGV4dWR2bWN6dnB3b3V1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzNTEzMjEsImV4cCI6MjA5OTkyNzMyMX0.nGQUIQKXg6VR1bbtesAqfGmKbE5TzrJxEDjBZWT_RW4"
 ENVIRONMENT = "production"
 GEMINI_MODEL = "gemini-2.0-flash"
 
