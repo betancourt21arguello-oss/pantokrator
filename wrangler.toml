@@ -10,9 +10,6 @@
 # Los secretos NO van aquí: se inyectan con `wrangler secret put <NAME>`.
 # =============================================================================
 
-[account]
-id = "56566e9b25f5574dc20103ba3ac9d85c"
-
 name = "camino-api"
 main = "src/worker/index.ts"
 compatibility_date = "2026-01-01"
@@ -20,8 +17,7 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 minify = true
 
-[account]
-id = "56566e9b25f5574dc20103ba3ac9d85c"
+account_id = "56566e9b25f5574dc20103ba3ac9d85c"
 
 [vars]
 SUPABASE_URL = "https://qmuootexudvmczvpwouu.supabase.co"
@@ -79,8 +75,8 @@ name = "camino-api-staging"
 
 [env.staging.vars]
 ENVIRONMENT = "staging"
-SUPABASE_URL = "https://YOUR-STAGING-ref.supabase.co"
-SUPABASE_ANON_KEY = "REPLACE_WITH_STAGING_ANON_KEY"
+SUPABASE_URL = "https://qmuootexudvmczvpwouu.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtdW9vdGV4dWR2bWN6dnB3b3V1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzNTEzMjEsImV4cCI6MjA5OTkyNzMyMX0.nGQUIQKXg6VR1bbtesAqfGmKbE5TzrJxEDjBZWT_RW4"
 GEMINI_MODEL = "gemini-2.0-flash"
 
 [[env.staging.queues.producers]]

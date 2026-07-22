@@ -1,0 +1,14 @@
+{
+  "/api/auth/session/route": "app/api/auth/session/route.js",
+  "/api/community/intentions/route": "app/api/community/intentions/route.js",
+  "/api/daily-content/route": "app/api/daily-content/route.js",
+  "/api/llama/current/route": "app/api/llama/current/route.js",
+  "/api/rosario/snapshot/route": "app/api/rosario/snapshot/route.js",
+  "/api/tasks/community-counts/route": "app/api/tasks/community-counts/route.js",
+  "/api/tasks/today/route": "app/api/tasks/today/route.js",
+  "/comunidad/page": "app/comunidad/page.js",
+  "/page": "app/page.js",
+  "/perfil/page": "app/perfil/page.js",
+  "/rosario/en-vivo/page": "app/rosario/en-vivo/page.js",
+  "/rosario/page": "app/rosario/page.js"
+}

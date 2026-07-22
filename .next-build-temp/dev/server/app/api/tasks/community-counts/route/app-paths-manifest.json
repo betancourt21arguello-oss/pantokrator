@@ -1,0 +1,3 @@
+{
+  "/api/tasks/community-counts/route": "app/api/tasks/community-counts/route.js"
+}
