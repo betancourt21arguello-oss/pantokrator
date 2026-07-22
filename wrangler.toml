@@ -10,23 +10,19 @@
 # Los secretos NO van aquí: se inyectan con `wrangler secret put <NAME>`.
 # =============================================================================
 
+[account]
+id = "56566e9b25f5574dc20103ba3ac9d85c"
+
 name = "camino-api"
 main = "src/worker/index.ts"
 compatibility_date = "2026-01-01"
-
-# nodejs_compat -> máxima compatibilidad con drivers de BD (postgres-js / pg)
-# y librerías Node usadas por Drizzle / @supabase/supabase-js.
 compatibility_flags = ["nodejs_compat"]
-
 workers_dev = true
 minify = true
 
-# -----------------------------------------------------------------------------
-# Variables públicas (NO secretas). Los secretos se cargan con:
-#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
-#   wrangler secret put SUPABASE_DB_URL
-#   wrangler secret put GEMINI_API_KEY
-# -----------------------------------------------------------------------------
+[account]
+id = "56566e9b25f5574dc20103ba3ac9d85c"
+
 [vars]
 SUPABASE_URL = "https://qmuootexudvmczvpwouu.supabase.co"
 SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFtdW9vdGV4dWR2bWN6dnB3b3V1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzNTEzMjEsImV4cCI6MjA5OTkyNzMyMX0.nGQUIQKXg6VR1bbtesAqfGmKbE5TzrJxEDjBZWT_RW4"
