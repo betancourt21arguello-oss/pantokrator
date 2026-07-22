@@ -135,3 +135,55 @@ export type PrayerRealtimeBroadcast =
   | { type: "leave"; profileId: string }
   | { type: "reader_timeout" }
   | { type: "node_advance"; nodeId: string; repeatCount: number };
+
+export interface RosaryParticipant {
+  profileId: string;
+  displayName: string;
+  isResponding: boolean;
+  lastHeartbeatAt: string;
+  joinedAt: string;
+}
+
+export interface RosarySnapshot {
+  sessionId: string;
+  sessionVersion: number;
+  devotionId: string;
+  sectionId: string;
+  stepId: string;
+  stepInstanceId: string;
+  stepType: StepType;
+  repeatIteration: number;
+  repeatTotal: number;
+  phase: RosaryPhase;
+  leaderParticipantId: string | null;
+  stepStartedAt: string;
+  stepEndsAt: string;
+  reflectionEndsAt: string | null;
+  status: "joining" | "active" | "reflection" | "completed" | "error";
+  participants: RosaryParticipant[];
+  programId: string;
+}
+
+export interface TransitionRequest {
+  sessionId: string;
+  eventId: string;
+  sessionVersion: number;
+  stepInstanceId: string;
+  eventType: "HOLD_END" | "HEARTBEAT" | "JOIN" | "LEAVE" | "PAUSE_REQUEST" | "RESUME_REQUEST";
+  participantId: string;
+  payload?: Record<string, unknown>;
+}
+
+export interface RosarySyncReturn {
+  participants: RosaryParticipant[];
+  currentStepIndex: number;
+  isConnected: boolean;
+  connectionState: ConnectionState;
+  sendResponse: () => void;
+  sendChatMessage: (text: string) => void;
+  repeatIteration: number;
+  repeatTotal: number;
+}
+
+export type RosaryPhase = "joining" | "active" | "reflection" | "completed" | "error";
+export type ConnectionState = "connecting" | "connected" | "reconnecting" | "stale" | "offline" | "fatal";
