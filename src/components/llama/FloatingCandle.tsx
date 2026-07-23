@@ -64,7 +64,7 @@ export function FloatingCandle() {
             </div>
 
             <p className="text-sm font-medium italic text-[#1c1c1e] mb-2 break-words">
-              "{activeIntention.content}"
+              &ldquo;{activeIntention.content}&rdquo;
             </p>
 
             <div className="flex items-center justify-between text-xs text-[#6e6e73]">

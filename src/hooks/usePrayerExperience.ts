@@ -141,9 +141,9 @@ export function usePrayerExperience({
     recognition.onend = () => {
       setIsListening(false);
       if (voiceEnabled) {
-        try {
-          recognition.start();
-          setIsListening(true);
+    try {
+      recognition.start();
+      setIsListening(true);
         } catch {
           setIsListening(false);
         }

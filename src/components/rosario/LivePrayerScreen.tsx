@@ -140,7 +140,7 @@ export function LivePrayerScreen({
 
         {isListening && (
           <p className="text-[11px] text-white/40">
-            Escuchando: "{isListening ? "..." : ""}"
+            Escuchando: &ldquo;{isListening ? '...' : ''}&rdquo;
           </p>
         )}
       </div>
@@ -156,7 +156,7 @@ export function LivePrayerScreen({
                   animation: `fadeIn 0.5s ease ${i * 0.2}s both`,
                 }}
               >
-                "{intention}"
+                &ldquo;{intention}&rdquo;
               </p>
             ))}
           </div>

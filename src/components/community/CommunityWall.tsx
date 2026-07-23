@@ -190,7 +190,7 @@ export function CommunityWall() {
 
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-[#1c1c1e] break-words leading-snug font-serif">
-                    "{item.content}"
+                    &ldquo;{item.content}&rdquo;
                   </p>
 
                   <div className="mt-2 flex items-center justify-between text-xs text-[#6e6e73]">

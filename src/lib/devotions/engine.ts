@@ -136,8 +136,8 @@ export function evaluateTransition(
   const currentNode = getCurrentNode(program, session);
   if (!currentNode || isStep(currentNode)) return null;
 
-  const module = currentNode as PrayerModule;
-  const transition = module.children
+  const mod = currentNode as PrayerModule;
+  const transition = mod.children
     .flatMap((child) => child.type !== "sequence" && child.type !== "repeat" && child.type !== "choice" && child.type !== "pause" ? [] : (child as PrayerModule).transitions ?? [])
     .find((t) => t.trigger === trigger);
 

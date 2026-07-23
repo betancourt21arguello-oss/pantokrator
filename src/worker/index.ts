@@ -223,6 +223,7 @@ async function loadSnapshot(supabase: ReturnType<typeof getSupabaseBrowser>, ses
   };
 }
 
-export default {
+const worker = {
   fetch: (request: Request, env: Env) => app.fetch(request, env),
 };
+export default worker;
